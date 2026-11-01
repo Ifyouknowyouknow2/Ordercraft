@@ -1,0 +1,646 @@
+### Create Product
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+  "name": "Steel Chair",
+  "description": "Manufactured steel chair",
+  "price": 2500,
+  "stock": 50,
+  "category": "Furniture"
+}
+### Get All Products
+GET http://localhost:8080/products
+### Get Product By ID
+GET http://localhost:8080/products/1
+### Get Product By ID
+GET http://localhost:8080/products/3
+### Update Product
+PUT http://localhost:8080/products/3
+Content-Type: application/json
+
+{
+  "name": "Premium Steel Chair",
+  "description": "High quality manufactured steel chair",
+  "price": 3000,
+  "stock": 40,
+  "category": "Furniture"
+}
+### Delete Product
+DELETE http://localhost:8080/products/6
+### Create Material
+POST http://localhost:8080/materials
+Content-Type: application/json
+
+{
+  "name": "Steel Sheet",
+  "description": "Raw steel sheet for manufacturing",
+  "price": 1200,
+  "stock": 100,
+  "unit": "kg"
+}
+### Get All Materials
+GET http://localhost:8080/materials
+### Get Material By ID
+GET http://localhost:8080/materials/1
+### Update Material
+PUT http://localhost:8080/materials/1
+Content-Type: application/json
+
+{
+  "name": "Premium Steel Sheet",
+  "description": "High quality raw steel sheet",
+  "price": 1500,
+  "stock": 80,
+  "unit": "kg"
+}
+### Delete Material
+DELETE http://localhost:8080/materials/1
+### Create Customer
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "ABC Manufacturing Ltd",
+  "email": "abc@manufacturing.com",
+  "phone": "9876543210",
+  "address": "Delhi, India"
+}
+### Get All Customers
+GET http://localhost:8080/customers
+### Get Customer By ID
+GET http://localhost:8080/customers/1
+### Update Customer
+PUT http://localhost:8080/customers/1
+Content-Type: application/json
+
+{
+  "name": "ABC Manufacturing Pvt Ltd",
+  "email": "contact@abcmanufacturing.com",
+  "phone": "9876543210",
+  "address": "Noida, Uttar Pradesh"
+}
+### Delete Customer
+DELETE http://localhost:8080/customers/1
+### Create BOM
+POST http://localhost:8080/boms
+Content-Type: application/json
+
+{
+  "name": "Steel Chair BOM",
+  "version": "1.0",
+  "status": "Active",
+  "product": {
+    "id": 1,
+    "name": "Steel Chair",
+    "description": "Manufactured steel chair",
+    "price": 2500,
+    "stock": 50,
+    "category": "Furniture"
+  }
+}
+### Get All BOMs
+GET http://localhost:8080/boms
+### Get BOM By ID
+GET http://localhost:8080/boms/1
+### Update BOM
+PUT http://localhost:8080/boms/1
+Content-Type: application/json
+
+{
+  "name": "Premium Steel Chair BOM",
+  "version": "2.0",
+  "status": "Active",
+  "product": {
+    "id": 1,
+    "name": "Steel Chair",
+    "description": "Manufactured steel chair",
+    "price": 2500,
+    "stock": 50,
+    "category": "Furniture"
+  }
+}
+### Delete BOM
+DELETE http://localhost:8080/boms/1
+### Create BOM Item
+POST http://localhost:8080/bom-items
+Content-Type: application/json
+
+{
+  "quantity": 5,
+  "bom": {
+    "id": 1,
+    "name": "Steel Chair BOM",
+    "version": "1.0",
+    "status": "Active"
+  },
+  "material": {
+    "id": 1,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet",
+    "price": 1200,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
+### Get All BOMs
+GET http://localhost:8080/boms
+### Create BOM Again
+POST http://localhost:8080/boms
+Content-Type: application/json
+
+{
+  "name": "Steel Chair BOM",
+  "version": "1.0",
+  "status": "Active",
+  "product": {
+    "id": 1,
+    "name": "Steel Chair",
+    "description": "Manufactured steel chair",
+    "price": 2500,
+    "stock": 50,
+    "category": "Furniture"
+  }
+}
+### Create BOM Item
+POST http://localhost:8080/bom-items
+Content-Type: application/json
+
+{
+  "quantity": 5,
+  "bom": {
+    "id": 1,
+    "name": "Steel Chair BOM",
+    "version": "1.0",
+    "status": "Active"
+  },
+  "material": {
+    "id": 1,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet",
+    "price": 1200,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
+### Get All BOMs
+GET http://localhost:8080/boms
+### Create BOM Item
+POST http://localhost:8080/bom-items
+Content-Type: application/json
+
+{
+  "quantity": 5,
+  "bom": {
+    "id": 2,
+    "name": "Steel Chair BOM",
+    "version": "1.0",
+    "status": "Active"
+  },
+  "material": {
+    "id": 1,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet",
+    "price": 1200,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
+### Get All Materials
+GET http://localhost:8080/materials
+### Create Material
+POST http://localhost:8080/materials
+Content-Type: application/json
+
+{
+  "name": "Steel Sheet",
+  "description": "Raw steel sheet for manufacturing",
+  "price": 1200,
+  "stock": 100,
+  "unit": "kg"
+}
+### Create BOM Item
+POST http://localhost:8080/bom-items
+Content-Type: application/json
+
+{
+  "quantity": 5,
+  "bom": {
+    "id": 2,
+    "name": "Steel Chair BOM",
+    "version": "1.0",
+    "status": "Active"
+  },
+  "material": {
+    "id": 2,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet for manufacturing",
+    "price": 1200,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
+### Get All BOM Items
+GET http://localhost:8080/bom-items
+### Update BOM Item
+PUT http://localhost:8080/bom-items/8
+Content-Type: application/json
+
+{
+  "quantity": 10,
+  "bom": {
+    "id": 2,
+    "name": "Steel Chair BOM",
+    "version": "1.0",
+    "status": "Active"
+  },
+  "material": {
+    "id": 2,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet for manufacturing",
+    "price": 1200,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
+### Get BOM Item By ID
+GET http://localhost:8080/bom-items/8
+### Delete BOM Item
+DELETE http://localhost:8080/bom-items/8
+### Create Supplier
+POST http://localhost:8080/suppliers
+Content-Type: application/json
+
+{
+  "name": "XYZ Steel Suppliers",
+  "email": "xyz@steel.com",
+  "phone": "9876543210",
+  "address": "Ghaziabad, Uttar Pradesh"
+}
+### Get All Suppliers
+GET http://localhost:8080/suppliers
+### Get Supplier By ID
+GET http://localhost:8080/suppliers/1
+### Update Supplier
+PUT http://localhost:8080/suppliers/1
+Content-Type: application/json
+
+{
+  "name": "XYZ Steel Suppliers Pvt Ltd",
+  "email": "contact@xyzsteel.com",
+  "phone": "9876543210",
+  "address": "Noida, Uttar Pradesh"
+}
+### Delete Supplier
+DELETE http://localhost:8080/suppliers/1
+### Create Customer for Sales Order
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "ABC Manufacturing Pvt Ltd",
+  "email": "contact@abcmanufacturing.com",
+  "phone": "9876543210",
+  "address": "Noida, Uttar Pradesh"
+}
+### Create Sales Order
+POST http://localhost:8080/sales-orders
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Pending",
+  "totalAmount": 25000,
+  "customer": {
+    "id": 3,
+    "name": "ABC Manufacturing Pvt Ltd",
+    "email": "contact@abcmanufacturing.com",
+    "phone": "9876543210",
+    "address": "Noida, Uttar Pradesh"
+  }
+}
+### Get All Sales Orders
+GET http://localhost:8080/sales-orders
+### Get Sales Order By ID
+GET http://localhost:8080/sales-orders/1
+### Update Sales Order
+PUT http://localhost:8080/sales-orders/1
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Confirmed",
+  "totalAmount": 28000,
+  "customer": {
+    "id": 3,
+    "name": "ABC Manufacturing Pvt Ltd",
+    "email": "contact@abcmanufacturing.com",
+    "phone": "9876543210",
+    "address": "Noida, Uttar Pradesh"
+  }
+}
+### Delete Sales Order
+DELETE http://localhost:8080/sales-orders/1
+### Create Sales Order
+POST http://localhost:8080/sales-orders
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Confirmed",
+  "totalAmount": 28000,
+  "customer": {
+    "id": 3,
+    "name": "ABC Manufacturing Pvt Ltd",
+    "email": "contact@abcmanufacturing.com",
+    "phone": "9876543210",
+    "address": "Noida, Uttar Pradesh"
+  }
+}
+### Create Sales Order Item
+POST http://localhost:8080/sales-order-items
+Content-Type: application/json
+
+{
+  "quantity": 2,
+  "price": 2500,
+  "salesOrder": {
+    "id": 2,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 28000
+  },
+  "product": {
+    "id": 1,
+    "name": "Steel Chair",
+    "description": "Manufactured steel chair",
+    "price": 2500,
+    "stock": 50,
+    "category": "Furniture"
+  }
+}
+### Get All Sales Order Items
+GET http://localhost:8080/sales-order-items
+### Get Sales Order Item By ID
+GET http://localhost:8080/sales-order-items/1
+### Update Sales Order Item
+PUT http://localhost:8080/sales-order-items/1
+Content-Type: application/json
+
+{
+  "quantity": 3,
+  "price": 2700,
+  "salesOrder": {
+    "id": 2,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 28000
+  },
+  "product": {
+    "id": 1,
+    "name": "Steel Chair",
+    "description": "Manufactured steel chair",
+    "price": 2500,
+    "stock": 50,
+    "category": "Furniture"
+  }
+}
+### Delete Sales Order Item
+DELETE http://localhost:8080/sales-order-items/1
+
+### Create Purchase Order
+POST http://localhost:8080/purchase-orders
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Pending",
+  "totalAmount": 12000,
+  "supplier": {
+    "id": 1,
+    "name": "ABC Steel Suppliers",
+    "email": "abcsteel@gmail.com",
+    "phone": "9876543210",
+    "address": "Ghaziabad, Uttar Pradesh"
+  }
+}
+
+
+### Get All Purchase Orders
+GET http://localhost:8080/purchase-orders
+
+
+### Get Purchase Order By ID
+GET http://localhost:8080/purchase-orders/1
+
+
+### Update Purchase Order
+PUT http://localhost:8080/purchase-orders/1
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Confirmed",
+  "totalAmount": 15000,
+  "supplier": {
+    "id": 1,
+    "name": "ABC Steel Suppliers",
+    "email": "abcsteel@gmail.com",
+    "phone": "9876543210",
+    "address": "Ghaziabad, Uttar Pradesh"
+  }
+}
+
+
+### Delete Purchase Order
+DELETE http://localhost:8080/purchase-orders/1
+
+
+### =====================================================
+### PURCHASE ORDER ITEM
+### =====================================================
+### Check Purchase Orders
+GET http://localhost:8080/purchase-orders
+### Create Purchase Order Item
+### Create Purchase Order
+POST http://localhost:8080/purchase-orders
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Pending",
+  "totalAmount": 12000,
+  "supplier": {
+    "id": 1,
+    "name": "ABC Steel Suppliers",
+    "email": "abcsteel@gmail.com",
+    "phone": "9876543210",
+    "address": "Ghaziabad, Uttar Pradesh"
+  }
+}
+
+
+
+### Get All Purchase Order Items
+GET http://localhost:8080/purchase-order-items
+
+
+### Get Purchase Order Item By ID
+GET http://localhost:8080/purchase-order-items/1
+
+
+### Update Purchase Order Item
+PUT http://localhost:8080/purchase-order-items/1
+Content-Type: application/json
+
+{
+  "quantity": 15,
+  "price": 1250,
+  "purchaseOrder": {
+    "id": 1,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 15000,
+    "supplier": {
+      "id": 1,
+      "name": "ABC Steel Suppliers",
+      "email": "abcsteel@gmail.com",
+      "phone": "9876543210",
+      "address": "Ghaziabad, Uttar Pradesh"
+    }
+  },
+  "material": {
+    "id": 2,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet for manufacturing",
+    "price": 1200,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
+
+
+### Delete Purchase Order Item
+DELETE http://localhost:8080/purchase-order-items/1
+
+
+### =====================================================
+### INVOICE
+### =====================================================
+
+### Create Invoice
+POST http://localhost:8080/invoices
+Content-Type: application/json
+
+{
+  "invoiceDate": "2026-09-30",
+  "amount": 28000,
+  "status": "Generated",
+  "salesOrder": {
+    "id": 2,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 28000,
+    "customer": {
+      "id": 3,
+      "name": "ABC Manufacturing Pvt Ltd",
+      "email": "contact@abcmanufacturing.com",
+      "phone": "9876543210",
+      "address": "Noida, Uttar Pradesh"
+    }
+  }
+}
+
+
+### Get All Invoices
+GET http://localhost:8080/invoices
+
+
+### Get Invoice By ID
+GET http://localhost:8080/invoices/1
+
+
+### Update Invoice
+PUT http://localhost:8080/invoices/1
+Content-Type: application/json
+
+{
+  "invoiceDate": "2026-09-30",
+  "amount": 30000,
+  "status": "Paid",
+  "salesOrder": {
+    "id": 2,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 28000,
+    "customer": {
+      "id": 3,
+      "name": "ABC Manufacturing Pvt Ltd",
+      "email": "contact@abcmanufacturing.com",
+      "phone": "9876543210",
+      "address": "Noida, Uttar Pradesh"
+    }
+  }
+}
+
+
+### Delete Invoice
+DELETE http://localhost:8080/invoices/1
+
+
+### =====================================================
+### PAYMENT
+### =====================================================
+
+### Create Payment
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "paymentDate": "2026-09-30",
+  "amount": 30000,
+  "paymentMethod": "Bank Transfer",
+  "status": "Completed",
+  "invoice": {
+    "id": 1,
+    "invoiceDate": "2026-09-30",
+    "amount": 30000,
+    "status": "Paid",
+    "salesOrder": {
+      "id": 2,
+      "orderDate": "2026-09-30",
+      "status": "Confirmed",
+      "totalAmount": 28000
+    }
+  }
+}
+
+
+### Get All Payments
+GET http://localhost:8080/payments
+
+
+### Get Payment By ID
+GET http://localhost:8080/payments/1
+
+
+### Update Payment
+PUT http://localhost:8080/payments/1
+Content-Type: application/json
+
+{
+  "paymentDate": "2026-09-30",
+  "amount": 30000,
+  "paymentMethod": "UPI",
+  "status": "Completed",
+  "invoice": {
+    "id": 1,
+    "invoiceDate": "2026-09-30",
+    "amount": 30000,
+    "status": "Paid"
+  }
+}
+
+
+### Delete Payment
+DELETE http://localhost:8080/payments/1

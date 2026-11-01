@@ -1,0 +1,272 @@
+POST http://localhost:8080/purchase-orders
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Pending",
+  "totalAmount": 12000,
+  "supplier": {
+    "id": 1,
+    "name": "ABC Steel Suppliers",
+    "email": "abcsteel@gmail.com",
+    "phone": "9876543210",
+    "address": "Ghaziabad, Uttar Pradesh"
+  }
+}
+### Get All Purchase Orders
+GET http://localhost:8080/purchase-orders
+### Get All Suppliers
+GET http://localhost:8080/suppliers
+### Create Supplier
+POST http://localhost:8080/suppliers
+Content-Type: application/json
+
+{
+  "name": "ABC Steel Suppliers",
+  "email": "abcsteel@gmail.com",
+  "phone": "9876543210",
+  "address": "Ghaziabad, Uttar Pradesh"
+}
+### Create Purchase Order
+POST http://localhost:8080/purchase-orders
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Pending",
+  "totalAmount": 12000,
+  "supplier": {
+    "id": 2
+  }
+}
+### ================= PURCHASE ORDER =================
+
+### Create Purchase Order
+POST http://localhost:8080/purchase-orders
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Pending",
+  "totalAmount": 12000,
+  "supplier": {
+    "id": 2
+  }
+}
+
+### Get All Purchase Orders
+GET http://localhost:8080/purchase-orders
+
+### Get Purchase Order By ID
+GET http://localhost:8080/purchase-orders/6
+
+### Update Purchase Order
+PUT http://localhost:8080/purchase-orders/6
+Content-Type: application/json
+
+{
+  "orderDate": "2026-09-30",
+  "status": "Confirmed",
+  "totalAmount": 15000,
+  "supplier": {
+    "id": 2
+  }
+}
+
+### Update Purchase Order Item
+PUT http://localhost:8080/purchase-order-items/3
+Content-Type: application/json
+
+{
+  "quantity": 15.0,
+  "price": 1250.0,
+  "purchaseOrder": {
+    "id": 6,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 15000.0,
+    "supplier": {
+      "id": 2
+    }
+  },
+  "material": {
+    "id": 2,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet for manufacturing",
+    "price": 1200.0,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
+
+### Delete Purchase Order
+DELETE http://localhost:8080/purchase-orders/6
+
+### ================= INVOICE =================
+
+### Create Invoice
+POST http://localhost:8080/invoices
+Content-Type: application/json
+
+{
+  "invoiceDate": "2026-09-30",
+  "amount": 28000.0,
+  "status": "Generated",
+  "salesOrder": {
+    "id": 2,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 28000.0,
+    "customer": {
+      "id": 3,
+      "name": "ABC Manufacturing Pvt Ltd",
+      "email": "contact@abcmanufacturing.com",
+      "phone": "9876543210",
+      "address": "Noida, Uttar Pradesh"
+    }
+  }
+}
+### Get All Invoices
+GET http://localhost:8080/invoices
+
+### Get Invoice By ID
+GET http://localhost:8080/invoices/1
+
+### Update Invoice
+PUT http://localhost:8080/invoices/1
+Content-Type: application/json
+
+{
+  "invoiceDate": "2026-09-30",
+  "amount": 28000.0,
+  "status": "Paid",
+  "salesOrder": {
+    "id": 2,
+    "orderDate": "2026-09-30",
+    "status": "Confirmed",
+    "totalAmount": 28000.0,
+    "customer": {
+      "id": 3,
+      "name": "ABC Manufacturing Pvt Ltd",
+      "email": "contact@abcmanufacturing.com",
+      "phone": "9876543210",
+      "address": "Noida, Uttar Pradesh"
+    }
+  }
+}
+
+### Delete Invoice
+DELETE http://localhost:8080/invoices/<INVOICE_ID>
+### Create Payment
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "paymentDate": "2026-09-30",
+  "amount": 28000.0,
+  "paymentMethod": "Bank Transfer",
+  "status": "Completed",
+  "invoice": {
+    "id": 1,
+    "invoiceDate": "2026-09-30",
+    "amount": 28000.0,
+    "status": "Paid"
+  }
+}
+### Get All Payments
+GET http://localhost:8080/payments
+### Get Payment by ID
+GET http://localhost:8080/payments/1
+
+### Update Payment
+PUT http://localhost:8080/payments/1
+Content-Type: application/json
+
+{
+  "paymentDate": "2026-09-30",
+  "amount": 28000.0,
+  "paymentMethod": "UPI",
+  "status": "Completed",
+  "invoice": {
+    "id": 1,
+    "invoiceDate": "2026-09-30",
+    "amount": 28000.0,
+    "status": "Paid"
+  }
+}
+
+### Delete Payment
+DELETE http://localhost:8080/payments/1
+
+### Products
+GET http://localhost:8080/products
+
+### Materials
+GET http://localhost:8080/materials
+
+### Customers
+GET http://localhost:8080/customers
+
+### BOMs
+GET http://localhost:8080/boms
+
+### BOM Items
+GET http://localhost:8080/bom-items
+
+### Sales Orders
+GET http://localhost:8080/sales-orders
+
+### Sales Order Items
+GET http://localhost:8080/sales-order-items
+
+### Suppliers
+GET http://localhost:8080/suppliers
+
+### Purchase Orders
+GET http://localhost:8080/purchase-orders
+
+### Purchase Order Items
+GET http://localhost:8080/purchase-order-items
+
+### Get All Purchase Order Items
+GET http://localhost:8080/purchase-order-items
+
+### Get Purchase Order Item By ID
+GET http://localhost:8080/purchase-order-items/3
+
+
+### Invoices
+GET http://localhost:8080/invoices
+
+### Payments
+GET http://localhost:8080/payments
+
+### Create Purchase Order Item
+POST http://localhost:8080/purchase-order-items
+Content-Type: application/json
+
+{
+  "quantity": 10.0,
+  "price": 1200.0,
+  "purchaseOrder": {
+    "id": 6,
+    "orderDate": "2026-09-30",
+    "status": "Pending",
+    "totalAmount": 12000.0,
+    "supplier": {
+      "id": 2,
+      "name": "ABC Steel Suppliers",
+      "email": "abcsteel@gmail.com",
+      "phone": "9876543210",
+      "address": "Ghaziabad, Uttar Pradesh"
+    }
+  },
+  "material": {
+    "id": 2,
+    "name": "Steel Sheet",
+    "description": "Raw steel sheet for manufacturing",
+    "price": 1200.0,
+    "stock": 100,
+    "unit": "kg"
+  }
+}
